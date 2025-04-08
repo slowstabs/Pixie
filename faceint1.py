@@ -52,6 +52,12 @@ def draw_eyes(emotion):
     elif emotion == "sad":
         draw.arc((30, 25, 50, 45), start=180, end=360, fill=255)
         draw.arc((80, 25, 100, 45), start=180, end=360, fill=255)
+    elif emotion == "neutral":
+        # Draw donut-shaped eyes
+        draw.ellipse((30, 25, 50, 45), outline=255, fill=255)  # Outer eye left
+        draw.ellipse((35, 30, 45, 40), outline=0, fill=0)     # Inner cutout left
+        draw.ellipse((80, 25, 100, 45), outline=255, fill=255)  # Outer eye right
+        draw.ellipse((85, 30, 95, 40), outline=0, fill=0)       # Inner cutout right
     oled.display(image)
 
 # Servo functions
